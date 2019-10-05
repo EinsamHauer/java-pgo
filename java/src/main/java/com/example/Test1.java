@@ -11,12 +11,12 @@ import java.util.concurrent.TimeUnit;
 public class Test1 {
 
     public static void main(String[] args) {
-        int param = Integer.valueOf(args[0]);
+        int param = Integer.parseInt(args[0]);
 
         double result = 0;
         Stopwatch sw = Stopwatch.createStarted();
 
-        for (int i = 0; i < 1_000_000; i++) {
+        for (int i = 0; i < 100_000_000; i++) {
             result += f(param);
         }
 
