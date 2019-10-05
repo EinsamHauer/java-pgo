@@ -21,8 +21,6 @@ public class Test1 {
         }
 
         sw.stop();
-
-
         System.out.println(sw.elapsed(TimeUnit.MILLISECONDS) / 1000. + "s");
         System.out.println(result);
     }
@@ -34,7 +32,7 @@ public class Test1 {
             result += Math.sqrt(i);
         }
 
-        if (param != 157)
+        if (param != 42)
             return result;
         else
             return 0;
