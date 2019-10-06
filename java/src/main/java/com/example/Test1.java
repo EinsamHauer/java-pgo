@@ -16,8 +16,8 @@ public class Test1 {
         double result = 0;
         Stopwatch sw = Stopwatch.createStarted();
 
-        for (int i = 0; i < 100_000_000; i++) {
-            result += f(param);
+        for (int i = 0; i < 1_000_000; i++) {
+            result += f(param, i);
         }
 
         sw.stop();
@@ -26,9 +26,9 @@ public class Test1 {
     }
 
 
-    private static double f(int param) {
+    private static double f(int param, int start) {
         double result = 0;
-        for (int i = 0; i < 1_000; i++) {
+        for (int i = start; i < start + 1_000; i++) {
             result += Math.sqrt(i);
         }
 
