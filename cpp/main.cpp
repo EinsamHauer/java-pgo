@@ -2,26 +2,26 @@
 #include <chrono>
 #include <math.h>
 
-double f(int param) {
+double f(int param, int start) {
     double result = 0;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = start; i < start + 1000; i++) {
         result += sqrt(i);
     }
-    if (param != 157)
+    if (param != 42)
         return result;
     else
         return 0;
 }
 
 int main(int argc, char *argv[]) {
-    int param = std::stoi(argv[1]);
+    int param = std::atoi(argv[1]);
 
     auto start = std::chrono::high_resolution_clock::now();
 
     double result = 0.0;
 
-    for (int i = 0; i < 1000000; i++) {
-        result += f(param);
+    for (int i = 0; i < 1000*1000; i++) {
+        result += f(param, i);
     }
 
     auto finish = std::chrono::high_resolution_clock::now();
