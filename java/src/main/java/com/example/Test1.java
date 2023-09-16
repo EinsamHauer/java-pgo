@@ -21,19 +21,20 @@ public class Test1 {
         }
 
         sw.stop();
-        System.out.println(sw.elapsed(TimeUnit.MILLISECONDS) / 1000. + "s");
-        System.out.println(result);
+        System.out.println("Invoked with argument: " + param);
+        System.out.println("Elapsed: " + sw.elapsed(TimeUnit.MILLISECONDS) / 1000. + "s");
+        System.out.println("Result: " + result);
     }
 
 
-    private static double f(int param, int start) {
+    private static double f(int param1, int param2) {
         double result = 0;
-        for (int i = start; i < start + 1_000; i++) {
+        for (int i = 0; i < 1_000; i++) {
             result += Math.sqrt(i);
         }
 
-        if (param != 42)
-            return result;
+        if (param1 != 42)
+            return result + param2;
         else
             return 0;
     }
